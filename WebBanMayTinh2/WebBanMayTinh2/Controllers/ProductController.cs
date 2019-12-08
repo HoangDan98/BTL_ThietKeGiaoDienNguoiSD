@@ -11,7 +11,7 @@ namespace WebBanMayTinh2.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            return View();
+            return View("Product");
         }
     }
 }
