@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f5050af4b3214674949cb28f7cfd1945" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.BinhLuanSp" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.CauHinhSP" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.CoSo" Width="1.5" PointX="6" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.DanhGiaSp" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.DanhMucSP" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.DonViGiaoHang" Width="1.5" PointX="1.5" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.HoaDon" Width="1.5" PointX="6" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.LoaiSanPham" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.NguoiDung" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.NguoiGiaoHang" Width="1.5" PointX="3.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.NhanVien" Width="1.5" PointX="3.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.NhomNguoiDung" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.SanPham" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.TrangThaiHoaDon" Width="1.5" PointX="3.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.TrangThaiSP" Width="1.5" PointX="6" PointY="22.25" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FK_BinhLuanSp_LoaiSanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_BinhLuanSp_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK__CauHinhSP__IDLoa__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_HoaDon_CoSo" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_NhanVien_CoSo" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_SanPham_CoSo" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_DanhGiaSp_LoaiSanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_DanhGiaSp_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_LoaiSanPham_DanhMucSP" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_NguoiGiaoHang_DonViGiaoHang" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_HoaDon_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_HoaDon_NguoiGiaoHang" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_HoaDon_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_HoaDon_TrangThaiHoaDon" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_LoaiSanPham_NhaCungCap" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_SanPham_LoaiSanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_NguoiDung_NhomNguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_SanPham_TrangThaiSP" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.ChiTietHoaDon" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
