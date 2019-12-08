@@ -114,8 +114,10 @@
                                                 <img src="~/Content/img/product01.png" alt="">
                                             </div>
                                             <div class="product-body">
-                                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                                <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+                                                <a href="@Url.Action("Index","Product")">
+                                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                                    <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+                                                </a>
                                             </div>
                                             <button class="delete"><i class="fa fa-close"></i></button>
                                         </div>
@@ -125,8 +127,10 @@
                                                 <img src="~/Content/img/product02.png" alt="">
                                             </div>
                                             <div class="product-body">
-                                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                                <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+                                                <a>
+                                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                                    <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+                                                </a>
                                             </div>
                                             <button class="delete"><i class="fa fa-close"></i></button>
                                         </div>
@@ -169,13 +173,13 @@
             <div id="responsive-nav">
                 <!-- NAV -->
                 <ul class="main-nav nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Hot Deals</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Laptops</a></li>
-                    <li><a href="#">Smartphones</a></li>
-                    <li><a href="#">Cameras</a></li>
-                    <li><a href="#">Accessories</a></li>
+                    <li class="active"><a href="@Url.Action("Index","Index")">Home</a></li>
+                    <li><a href="@Url.Action("Index","Store")">Store</a></li>
+                    <li><a href="@Url.Action("Index","Build")">Build PC</a></li>
+                    <li><a href="@Url.Action("Index","Compare")">Compare</a></li>
+                    <li><a href="@Url.Action("Index","Discounts")">Discounts</a></li>
+                    <li><a href="@Url.Action("Index","Cart")">My Cart</a></li>
+                    <li><a href="@Url.Action("Index","Account")">My Account</a></li>
                 </ul>
                 <!-- /NAV -->
             </div>
@@ -274,21 +278,23 @@
                                             </div>
                                         </div>
                                         <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <div class="product-btns">
-                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                            </div>
+                                            <a href="@Url.Action("Index","Product")">
+                                                <p class="product-category">Category</p>
+                                                <h3 class="product-name"><a href="@Url.Action("Index","Product")">product name goes here</a></h3>
+                                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                                <div class="product-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <div class="product-btns">
+                                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="add-to-cart">
                                             <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
@@ -304,21 +310,23 @@
                                             </div>
                                         </div>
                                         <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-btns">
-                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                            </div>
+                                            <a href="@Url.Action("Index","Product")">
+                                                <p class="product-category">Category</p>
+                                                <h3 class="product-name"><a href="@Url.Action("Index","Product")">product name goes here</a></h3>
+                                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                                <div class="product-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </div>
+                                                <div class="product-btns">
+                                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="add-to-cart">
                                             <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
@@ -334,16 +342,18 @@
                                             </div>
                                         </div>
                                         <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                            <div class="product-rating">
-                                            </div>
-                                            <div class="product-btns">
-                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                            </div>
+                                            <a href="@Url.Action("Index","Product")">
+                                                <p class="product-category">Category</p>
+                                                <h3 class="product-name"><a href="@Url.Action("Index","Product")">product name goes here</a></h3>
+                                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                                <div class="product-rating">
+                                                </div>
+                                                <div class="product-btns">
+                                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="add-to-cart">
                                             <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
@@ -356,21 +366,23 @@
                                             <img src="~/Content/img/product04.png" alt="">
                                         </div>
                                         <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <div class="product-btns">
-                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                            </div>
+                                            <a href="@Url.Action("Index","Product")">
+                                                <p class="product-category">Category</p>
+                                                <h3 class="product-name"><a href="@Url.Action("Index","Product")">product name goes here</a></h3>
+                                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                                <div class="product-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <div class="product-btns">
+                                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="add-to-cart">
                                             <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
@@ -383,21 +395,23 @@
                                             <img src="~/Content/img/product05.png" alt="">
                                         </div>
                                         <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <div class="product-btns">
-                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                            </div>
+                                            <a href="@Url.Action("Index","Product")">
+                                                <p class="product-category">Category</p>
+                                                <h3 class="product-name"><a href="@Url.Action("Index","Product")">product name goes here</a></h3>
+                                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                                <div class="product-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <div class="product-btns">
+                                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="add-to-cart">
                                             <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
@@ -502,21 +516,23 @@
                                             </div>
                                         </div>
                                         <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <div class="product-btns">
-                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                            </div>
+                                            <a>
+                                                <p class="product-category">Category</p>
+                                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                                <div class="product-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <div class="product-btns">
+                                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="add-to-cart">
                                             <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
@@ -532,21 +548,23 @@
                                             </div>
                                         </div>
                                         <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </div>
-                                            <div class="product-btns">
-                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                            </div>
+                                            <a>
+                                                <p class="product-category">Category</p>
+                                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                                <div class="product-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </div>
+                                                <div class="product-btns">
+                                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="add-to-cart">
                                             <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
@@ -562,16 +580,18 @@
                                             </div>
                                         </div>
                                         <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                            <div class="product-rating">
-                                            </div>
-                                            <div class="product-btns">
-                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                            </div>
+                                            <a>
+                                                <p class="product-category">Category</p>
+                                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                                <div class="product-rating">
+                                                </div>
+                                                <div class="product-btns">
+                                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="add-to-cart">
                                             <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
@@ -584,21 +604,23 @@
                                             <img src="~/Content/img/product09.png" alt="">
                                         </div>
                                         <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <div class="product-btns">
-                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                            </div>
+                                            <a>
+                                                <p class="product-category">Category</p>
+                                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                                <div class="product-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <div class="product-btns">
+                                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="add-to-cart">
                                             <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
@@ -611,21 +633,23 @@
                                             <img src="~/Content/img/product01.png" alt="">
                                         </div>
                                         <div class="product-body">
-                                            <p class="product-category">Category</p>
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <div class="product-btns">
-                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-                                            </div>
+                                            <a>
+                                                <p class="product-category">Category</p>
+                                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                                <div class="product-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <div class="product-btns">
+                                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="add-to-cart">
                                             <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
@@ -668,9 +692,11 @@
                                     <img src="~/Content/img/product07.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /product widget -->
@@ -680,9 +706,11 @@
                                     <img src="~/Content/img/product08.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /product widget -->
@@ -692,9 +720,11 @@
                                     <img src="~/Content/img/product09.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- product widget -->
@@ -707,9 +737,11 @@
                                     <img src="~/Content/img/product01.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /product widget -->
@@ -719,9 +751,11 @@
                                     <img src="~/Content/img/product02.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /product widget -->
@@ -731,9 +765,11 @@
                                     <img src="~/Content/img/product03.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- product widget -->
@@ -757,9 +793,11 @@
                                     <img src="~/Content/img/product04.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /product widget -->
@@ -769,9 +807,11 @@
                                     <img src="~/Content/img/product05.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /product widget -->
@@ -781,9 +821,11 @@
                                     <img src="~/Content/img/product06.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- product widget -->
@@ -796,9 +838,11 @@
                                     <img src="~/Content/img/product07.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /product widget -->
@@ -808,9 +852,11 @@
                                     <img src="~/Content/img/product08.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /product widget -->
@@ -820,9 +866,11 @@
                                     <img src="~/Content/img/product09.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- product widget -->
@@ -848,9 +896,11 @@
                                     <img src="~/Content/img/product01.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /product widget -->
@@ -860,9 +910,11 @@
                                     <img src="~/Content/img/product02.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /product widget -->
@@ -872,9 +924,11 @@
                                     <img src="~/Content/img/product03.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- product widget -->
@@ -887,9 +941,11 @@
                                     <img src="~/Content/img/product04.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /product widget -->
@@ -899,9 +955,11 @@
                                     <img src="~/Content/img/product05.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /product widget -->
@@ -911,9 +969,11 @@
                                     <img src="~/Content/img/product06.png" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <p class="product-category">Category</p>
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    <a>
+                                        <p class="product-category">Category</p>
+                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                    </a>
                                 </div>
                             </div>
                             <!-- product widget -->
@@ -963,7 +1023,7 @@
     </div>
     <!-- /NEWSLETTER -->
     <!-- FOOTER -->
-    <footer id="footer">
+    <footer id="footer" >
         <!-- top footer -->
         <div class="section">
             <!-- container -->

@@ -128,6 +128,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BuildController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\CompareController.cs" />
+    <Compile Include="Controllers\DiscountsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="BinhLuanSp.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
@@ -203,10 +213,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Acc_css\material-design-iconic-font.min.css" />
+    <Content Include="Content\Acc_css\nouislider.min.css" />
+    <Content Include="Content\Acc_css\nouislider.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Build_css\all.css" />
+    <Content Include="Content\Build_css\Build_pc.css" />
+    <Content Include="Content\Cart_css\Cart.css" />
+    <Content Include="Content\compare.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\nouislider.min.css" />
@@ -262,6 +279,7 @@
       <DependentUpon>DbModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Cart_js\Cart.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -293,11 +311,20 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\Cart\Cart.cshtml" />
+    <Content Include="Views\Checkout\Checkout.cshtml" />
+    <Content Include="Views\Discounts\Discounts.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\Build\Build.cshtml" />
+    <Content Include="Views\Account\Account.cshtml" />
+    <Content Include="Views\Compare\Compare.cshtml" />
+    <Content Include="Views\Product\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="fonts\Acc_fonts\fonts\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Product\" />
+    <Folder Include="Scripts\Acc_page_js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
