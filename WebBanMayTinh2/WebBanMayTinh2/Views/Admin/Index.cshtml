@@ -1,0 +1,50 @@
+﻿@using WebBanMayTinh
+@model IEnumerable<SanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading  text-center">
+        <h3>Tất cả sản phẩm</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th class="text-center">Tên</th>
+                <th class="text-center">Ảnh</th>
+                <th class="text-center"> Mô tả</th>
+                <th class="text-center">Giá</th>
+                <th class="text-center">Cơ sở</th>
+                <th class="text-center">Trạng thái</th>
+                <th class="text-center">Số seri</th>
+                <th class="text-center">Chức năng</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.LoaiSanPham.Ten)</td>
+                <td><img src="~/Content/img/@item.LoaiSanPham.Anh" alt="" width="100" height="100"></td>
+                <td>@Html.DisplayFor(modelItem => item.LoaiSanPham.MoTa)</td>
+                <td>@Html.DisplayFor(modelItem => item.LoaiSanPham.Gia)</td>
+                <td>@Html.DisplayFor(modelItem => item.CoSo.Ten)</td>
+                <td>@Html.DisplayFor(modelItem => item.TrangThaiSP.TenTT)</td>
+                <td>@Html.DisplayFor(modelItem => item.SoSeri)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { productId = item.ID }, new { @class = "btn btn-primary" }) |
+                    @Html.ActionLink("Detail", "Detail", new { productId = item.ID }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Delete", "Delete", new { productId = item.ID }, new { @class = "btn btn-danger" })
+                </td>
+                @*<td></td>*@
+            </tr>
+            }
+        </table>
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink("Add a new product", "Create", null,
+        new { @class = "btn btn-primary" })
+    </div>
+</div>

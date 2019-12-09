@@ -1,0 +1,41 @@
+﻿@using WebBanMayTinh.Models.AdminViewModels
+@model SanPhamViewModel
+
+@{
+    ViewBag.Title = "Adit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel" style="margin: auto; width: 30%">
+    <div class="panel-heading">
+        <h3>@Model.sanPham.LoaiSanPham.Ten</h3>
+    </div>
+    @using (Html.BeginForm())
+    {
+    <div class="panel-body">
+        @Html.Hidden("ID", Model.sanPham.ID)
+        <div class="form-group">
+            <label>Số seri</label>
+            @Html.TextBox("SoSeri", Model.sanPham.SoSeri, new { @class = "form-control" })
+            @*@Html.TextBoxFor(m => m.sanPham.SoSeri, Model.sanPham.SoSeri, new { @class = "form-control" })*@
+        </div>
+        <div class="form-group">
+            <label>Co so</label>
+            @*@Html.DropDownListFor(m => m.sanPham.IDCoSo, Model.coSos, "--Chọn cơ sở--", new { @class = "form-control" })*@
+            @Html.DropDownList("IDCoSo", Model.coSos, "--Chọn cơ sở--", new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Trang thai</label>
+            @*@Html.DropDownListFor(m => m.sanPham.IDTrangThai, Model.trangThais, "--Chọn trạng thái--", new { @class = "form-control" })*@
+            @Html.DropDownList("IDTrangThai", Model.trangThais, "--Chọn trạng thái--", new { @class = "form-control" })
+        </div>
+    </div>
+
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            @Html.ActionLink("Cancel and return to List", "Index", null, new {
+                @class = "btn btn-default"
+            })
+        </div>
+    }
+</div>
