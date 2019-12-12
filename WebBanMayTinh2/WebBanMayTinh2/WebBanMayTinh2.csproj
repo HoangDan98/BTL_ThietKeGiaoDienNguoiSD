@@ -134,8 +134,9 @@
     <Compile Include="CauHinhSP.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\DropBoxController.cs" />
+    <Compile Include="Controllers\AdminProductController.cs" />
+    <Compile Include="Controllers\AdminNavController.cs" />
+    <Compile Include="Controllers\AdminProductTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -172,9 +173,16 @@
     <Compile Include="HoaDon.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\PagingHelper.cs" />
     <Compile Include="LoaiSanPham.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminViewModels\CategoryNavViewModel.cs" />
+    <Compile Include="Models\AdminViewModels\PagingInfo.cs" />
+    <Compile Include="Models\AdminViewModels\ProductList.cs" />
+    <Compile Include="Models\AdminViewModels\ProductTypeDetail.cs" />
+    <Compile Include="Models\AdminViewModels\ProductTypeList.cs" />
+    <Compile Include="Models\AdminViewModels\ProductTypeViewModel.cs" />
     <Compile Include="Models\AdminViewModels\SanPhamViewModel.cs" />
     <Compile Include="NguoiDung.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
@@ -210,7 +218,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\css\adminStyle.css" />
+    <Content Include="Content\css\Admin\adminStyle.css" />
+    <Content Include="Content\css\Admin\VerticalBarStyle.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\nouislider.min.css" />
@@ -298,9 +307,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\AdminProduct\Index.cshtml" />
+    <Content Include="Views\AdminProduct\Edit.cshtml" />
     <Content Include="Views\DropBox\Index.cshtml" />
+    <Content Include="Views\AdminNav\VerticalMenu.cshtml" />
+    <Content Include="Views\AdminProductType\Index.cshtml" />
+    <Content Include="Views\AdminProductType\Edit.cshtml" />
+    <Content Include="Views\AdminProductType\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,32 @@
+﻿@using WebBanMayTinh.Models.AdminViewModels
+@using WebBanMayTinh
+@using WebBanMayTinh.HtmlHelpers
+@model ProductTypeDetail
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel panel-default" style="margin: auto; width: 90%">
+    <div class="panel-heading text-center"><h3>Chi tiet san pham</h3></div>
+    <div class="panel-body">
+        <div class="panel-body text-center">
+            <div>Tên: @Model.ProductType.Ten</div>
+            <div>Số lượng còn lại: @Model.RemainProductCount</div>
+            <div>Số lượng đã bán: @Model.SelledProductCount</div>
+            <div>Stars: @Model.AverageStar</div>
+            <div><img src="~/Content/img/@Model.ProductType.Anh" alt="Alternate Text" width="200" height="200" /></div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <h3>Binh luan:</h3>
+        <ul class="list-group">
+            @foreach (BinhLuanSp comment in Model.Comments)
+            {
+                <li class="list-group-item">@comment.NguoiDung.Ten :  - @comment.NoiDungBL @Html.ActionLink("Xóa", "DeleteComment", new { userID = comment.IDNguoiDung, productTypeID = comment.IDLoaiSanPham }, new { @class = "btn btn-danger" })</li>
+            }
+            @Html.CreatePageLinks(Model.PagingInfo, x => Url.Action("Detail", "AdminProductType", new { productTypeID = Model.ProductType.ID, page = x }))
+        </ul>
+    </div>
+</div>
+

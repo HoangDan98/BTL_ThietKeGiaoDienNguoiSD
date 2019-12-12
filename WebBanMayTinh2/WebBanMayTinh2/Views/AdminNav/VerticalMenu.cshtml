@@ -1,0 +1,26 @@
+﻿@using WebBanMayTinh.Controllers
+@model IEnumerable<NavCategoryItem>
+<div class="sidebar">
+    <h2>Admin</h2>
+    <ul class="text-center">
+        <li>@Html.ActionLink("Home", "Index", "AdminProduct")</li>
+        @foreach (NavCategoryItem navCategory in Model)
+        {
+            <li>@Html.ActionLink(navCategory.Name, "Index", navCategory.ControllerName, null,
+               new { @class = (navCategory.ControllerName == ViewBag.SelectedCategory ? "Selected" : "") })</li>
+            @*if (ViewBag.SelectedNavCategory == navCategory.Name)
+            {
+            }
+            else
+            {
+                <li>@Html.ActionLink(navCategory.Name, "Index", navCategory.ControllerName)</li>
+            }*@
+            @*<li>@Html.ActionLink("Sản phẩm", "Index", "AdminProduct")</li>
+            <li>@Html.ActionLink("Loại sản phẩm", "Index", "AdminProductType")</li>
+            <li>@Html.ActionLink("Nhà cung cấp", "Index", "AdminProduct")</li>
+            <li>@Html.ActionLink("Người dùng", "Index", "AdminProduct")</li>
+            <li>@Html.ActionLink("Danh mục sản phẩm", "Index", "AdminProduct")</li>
+            <li>@Html.ActionLink("Hóa đơn", "Index", "AdminProduct")</li>*@
+        }
+    </ul>
+</div>

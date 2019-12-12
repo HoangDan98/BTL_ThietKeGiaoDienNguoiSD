@@ -1,21 +1,22 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>_AdminLayout</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    <link href="~/Content/css/adminStyle.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Admin/VerticalBarStyle.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/Admin/adminStyle.css">
+    <title>Document</title>
 </head>
 <body>
-    <div> 
-        @RenderBody()
+    <div class="wrapper">
+        @Html.Action("Index", "AdminNav");
+        <div class="main_content">
+            <div class="info">
+                @RenderBody();
+            </div>
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,55 @@
+﻿@using WebBanMayTinh.Models.AdminViewModels
+
+@model ProductTypeViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel panel-primary" style="margin: auto; width: 70%">
+    <div class="panel-heading text-center"><h3>Chinh sua thong tin</h3></div>
+    @using (Html.BeginForm("Edit", "AdminProductType"))
+    {
+    <div class="panel-body">
+        @Html.Hidden("ID", Model.LoaiSanPhamProp.ID)
+        <div class="form-group">
+            <label>Ten</label>
+            @Html.TextBox("Ten", Model.LoaiSanPhamProp.Ten, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Mo ta</label>
+            @Html.TextArea("MoTa", Model.LoaiSanPhamProp.MoTa, 4, 4, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Gia</label>
+            @Html.TextBox("Gia", Model.LoaiSanPhamProp.Gia, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Giam gia</label>
+            @Html.TextBox("GiamGia", Model.LoaiSanPhamProp.GiamGia, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Nha cung cap</label>
+            @Html.DropDownList("IDNhaCungCap", Model.NhaCungCaps, null, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Danh muc san pham</label>
+            @*@Html.DropDownListFor(m => m.sanPham.IDCoSo, Model.coSos, "--Chọn cơ sở--", new { @class = "form-control" })*@
+            @Html.DropDownList("IDDanhMucSP", Model.DanhMucs, null, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Anh</label>
+            @*@Html.DropDownListFor(m => m.sanPham.IDCoSo, Model.coSos, "--Chọn cơ sở--", new { @class = "form-control" })*@
+            @Html.DropDownList("Anh", Model.Anhs, null, new { @class = "form-control" })
+        </div>
+    </div>
+
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            @Html.ActionLink("Cancel and return to List", "Index", null, new {
+                @class = "btn btn-default"
+            })
+        </div>
+    }
+</div>
+
