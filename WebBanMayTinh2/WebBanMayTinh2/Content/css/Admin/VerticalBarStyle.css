@@ -99,7 +99,7 @@
 }
 
 .wrapper .main_content .info div {
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
 }
 
 @media (max-height: 500px) {

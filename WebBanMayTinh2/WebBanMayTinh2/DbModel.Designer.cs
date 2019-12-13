@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'M:\Hoc ki 1 nam 4\Thiet ke Giao dien Nguoi su dung\BTL_ThietKeGiaoDienNguoiSD\WebBanMayTinh2\WebBanMayTinh2\DbModel.edmx'. 
+﻿// T4 code generation is enabled for model 'M:\Hoc ki 1 nam 4\Thiet ke Giao dien Nguoi su dung\BTL_ThietKeGiaoDienNguoiSD\WebBanMayTinh2\WebBanMayTinh2\DBModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

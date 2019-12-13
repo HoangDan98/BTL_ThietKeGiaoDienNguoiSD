@@ -7,6 +7,15 @@
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/Admin/VerticalBarStyle.css">
     <link rel="stylesheet" type="text/css" href="~/Content/css/Admin/adminStyle.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/themes/base/jquery-ui.min.css">
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+            $('#datepicker1').datepicker();
+        });
+    </script>
     <title>Document</title>
 </head>
 <body>
@@ -14,9 +23,10 @@
         @Html.Action("Index", "AdminNav");
         <div class="main_content">
             <div class="info">
-                @RenderBody();
+                @RenderBody()
             </div>
         </div>
     </div>
+    
 </body>
 </html>

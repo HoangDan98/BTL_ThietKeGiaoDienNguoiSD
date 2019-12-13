@@ -14,22 +14,16 @@ namespace WebBanMayTinh
     
     public partial class SanPham
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SanPham()
-        {
-            this.HoaDons = new HashSet<HoaDon>();
-        }
-    
         public string ID { get; set; }
         public string IDLoaiSanPham { get; set; }
         public string SoSeri { get; set; }
         public string IDCoSo { get; set; }
         public string IDTrangThai { get; set; }
+        public string IDHoaDon { get; set; }
     
         public virtual CoSo CoSo { get; set; }
+        public virtual HoaDon HoaDon { get; set; }
         public virtual LoaiSanPham LoaiSanPham { get; set; }
         public virtual TrangThaiSP TrangThaiSP { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HoaDon> HoaDons { get; set; }
     }
 }

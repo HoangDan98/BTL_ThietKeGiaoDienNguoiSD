@@ -1,0 +1,96 @@
+﻿@using WebBanMayTinh.Models.AdminViewModels
+@using WebBanMayTinh.HtmlHelpers
+@model ProductStatsViewModel
+@{
+                /**/
+
+                ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel panel-primary" style="margin: auto">
+   <div class="panel-heading text-center"><h3>Chọn thông tin muốn xem</h3></div>
+   <div class="panel-body" style="width: 90%; margin: auto">
+       @using (Html.BeginForm("Index", "AdminStats", FormMethod.Get))
+       {
+           <div class="row">
+               <div class="col-lg-4">
+                   <div class="form-group">
+                       <label>Từ ngày: </label>
+                       @*@Html.TextBox("fromDate", )*@
+                       <input class="form-control" type="text" id="datepicker" name="fromDateStr">
+                   </div>
+               </div>
+               <div class="col-lg-4">
+                   <div class="form-group">
+                       <label>Đến ngày: </label>
+                       <input class="form-control" type="text" id="datepicker1" name="toDateStr">
+                   </div>
+               </div>
+               <div class="col-lg-4">
+                   <div class="form-group">
+                       <label>Cơ sở: </label>
+                       @*@Html.DropDownList("branchID", Model.Branches, null, new { @class = "form-control" })*@
+                       @Html.DropDownList("branchID", Model.Branches, "--Chọn cơ sở--", new { @class = "form-control" })
+                   </div>
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-lg-4">
+                   <div class="form-group">
+                       <label>Danh mục sản phẩm: </label>
+                       @Html.DropDownList("categoryID", Model.Categories, "--Chọn danh mục sản phẩm--", new { @class = "form-control" })
+                   </div>
+               </div>
+               <div class="col-lg-4">
+                   <div class="form-group">
+                       <label>Nhà cung cấp: </label>
+                       @Html.DropDownList("supplierID", Model.Supplieres, "--Chọn nhà cung cấp--", new { @class = "form-control" })
+                   </div>
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-lg-12 form-group"><input class="btn btn-primary" type="submit" value="Thong ke" /></div>
+           </div>
+       }
+       <div>Length: @Model.Products.Count()</div>
+       <table class="table table-bordered table-hover">
+           <thead>
+               <tr>
+                   <td>Tên sản phẩm</td>
+                   <td>Ảnh</td>
+                   <td>Ngày bán</td>
+                   <td>Nhà cung cấp</td>
+                   <td>Cơ sở</td>
+                   <td>Danh mục</td>
+                   <td>Giá bán</td>
+                   <td>Giảm giá</td>
+                   <td>Thành tiền</td>
+               </tr>
+           </thead>
+           <tbody>
+               @foreach (var item in Model.Products)
+               {
+                   <tr>
+                       <td style="vertical-align:middle">@Html.DisplayFor(modelItem => item.LoaiSanPham.Ten)</td>
+                       <td style="vertical-align:middle"><img src="~/Content/img/@item.LoaiSanPham.Anh" alt="" width="100" height="100"></td>
+                       <td style="vertical-align:middle">@Html.DisplayFor(modelTiem => item.HoaDon.NgayXuatHD)</td>
+                       <td style="vertical-align:middle">@Html.DisplayFor(modelItem => item.LoaiSanPham.NhaCungCap.Ten)</td>
+                       <td style="vertical-align:middle">@Html.DisplayFor(modelItem => item.CoSo.Ten)</td>
+                       <td style="vertical-align:middle">@Html.DisplayFor(modelItem => item.LoaiSanPham.DanhMucSP.Ten)</td>
+                       <td style="vertical-align:middle">@Html.DisplayFor(modelItem => item.LoaiSanPham.Gia)</td>
+                       <td style="vertical-align:middle">@Html.DisplayFor(modelItem => item.LoaiSanPham.GiamGia)</td>
+                       <td style="vertical-align:middle">@(item.LoaiSanPham.Gia - item.LoaiSanPham.Gia * item.LoaiSanPham.GiamGia / 100)</td>
+                   </tr>
+               }
+           </tbody>
+           <tfoot>
+               <tr>
+                   <td colspan="9" class="text-right">
+                       Tong tien: @Model.TotalMoneys
+                   </td>
+               </tr>
+           </tfoot>
+       </table>
+   </div>
+</div>

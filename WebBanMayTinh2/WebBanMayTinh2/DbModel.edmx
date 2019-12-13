@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BanMayTinhModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BinhLuanSp">
           <Key>
             <PropertyRef Name="IDNguoiDung" />
@@ -21,14 +21,6 @@
           <Property Name="IDLoaiSP" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="TenThuocTinh" Type="nvarchar" MaxLength="50" />
           <Property Name="GiaTriThuocTinh" Type="nvarchar" MaxLength="100" />
-        </EntityType>
-        <EntityType Name="ChiTietHoaDon">
-          <Key>
-            <PropertyRef Name="IDHoaDon" />
-            <PropertyRef Name="IDSanPham" />
-          </Key>
-          <Property Name="IDHoaDon" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="IDSanPham" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="CoSo">
           <Key>
@@ -152,6 +144,7 @@
           <Property Name="SoSeri" Type="nchar" MaxLength="50" />
           <Property Name="IDCoSo" Type="nchar" MaxLength="10" />
           <Property Name="IDTrangThai" Type="nchar" MaxLength="10" />
+          <Property Name="IDHoaDon" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -189,6 +182,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__SanPham__IDHoaDo__6E01572D">
+          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="0..1" />
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HoaDon">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SanPham">
+              <PropertyRef Name="IDHoaDon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_BinhLuanSp_LoaiSanPham">
           <End Role="LoaiSanPham" Type="Self.LoaiSanPham" Multiplicity="1" />
           <End Role="BinhLuanSp" Type="Self.BinhLuanSp" Multiplicity="*" />
@@ -210,30 +215,6 @@
             </Principal>
             <Dependent Role="BinhLuanSp">
               <PropertyRef Name="IDNguoiDung" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietHoaDon_HoaDon">
-          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
-          <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HoaDon">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ChiTietHoaDon">
-              <PropertyRef Name="IDHoaDon" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ChiTietHoaDon_SanPham">
-          <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
-          <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SanPham">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ChiTietHoaDon">
-              <PropertyRef Name="IDSanPham" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -417,10 +398,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DBModelStoreContainer">
+        <EntityContainer Name="BanMayTinhModelStoreContainer">
           <EntitySet Name="BinhLuanSp" EntityType="Self.BinhLuanSp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CauHinhSP" EntityType="Self.CauHinhSP" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ChiTietHoaDon" EntityType="Self.ChiTietHoaDon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CoSo" EntityType="Self.CoSo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DanhGiaSp" EntityType="Self.DanhGiaSp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DanhMucSP" EntityType="Self.DanhMucSP" Schema="dbo" store:Type="Tables" />
@@ -440,6 +420,10 @@
             <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
             <End Role="CauHinhSP" EntitySet="CauHinhSP" />
           </AssociationSet>
+          <AssociationSet Name="FK__SanPham__IDHoaDo__6E01572D" Association="Self.FK__SanPham__IDHoaDo__6E01572D">
+            <End Role="HoaDon" EntitySet="HoaDon" />
+            <End Role="SanPham" EntitySet="SanPham" />
+          </AssociationSet>
           <AssociationSet Name="FK_BinhLuanSp_LoaiSanPham" Association="Self.FK_BinhLuanSp_LoaiSanPham">
             <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
             <End Role="BinhLuanSp" EntitySet="BinhLuanSp" />
@@ -447,14 +431,6 @@
           <AssociationSet Name="FK_BinhLuanSp_NguoiDung" Association="Self.FK_BinhLuanSp_NguoiDung">
             <End Role="NguoiDung" EntitySet="NguoiDung" />
             <End Role="BinhLuanSp" EntitySet="BinhLuanSp" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietHoaDon_HoaDon" Association="Self.FK_ChiTietHoaDon_HoaDon">
-            <End Role="HoaDon" EntitySet="HoaDon" />
-            <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDon" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiTietHoaDon_SanPham" Association="Self.FK_ChiTietHoaDon_SanPham">
-            <End Role="SanPham" EntitySet="SanPham" />
-            <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDon" />
           </AssociationSet>
           <AssociationSet Name="FK_DanhGiaSp_LoaiSanPham" Association="Self.FK_DanhGiaSp_LoaiSanPham">
             <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
@@ -521,7 +497,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BanMayTinhModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="BinhLuanSp">
           <Key>
             <PropertyRef Name="IDNguoiDung" />
@@ -598,11 +574,11 @@
           <Property Name="IDNguoiGiaoHang" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="NgayXuatHD" Type="DateTime" Precision="3" />
           <NavigationProperty Name="CoSo" Relationship="Self.FK_HoaDon_CoSo" FromRole="HoaDon" ToRole="CoSo" />
+          <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__IDHoaDo__6E01572D" FromRole="HoaDon" ToRole="SanPham" />
           <NavigationProperty Name="NguoiDung" Relationship="Self.FK_HoaDon_NguoiDung" FromRole="HoaDon" ToRole="NguoiDung" />
           <NavigationProperty Name="NguoiGiaoHang" Relationship="Self.FK_HoaDon_NguoiGiaoHang" FromRole="HoaDon" ToRole="NguoiGiaoHang" />
           <NavigationProperty Name="NhanVien" Relationship="Self.FK_HoaDon_NhanVien" FromRole="HoaDon" ToRole="NhanVien" />
           <NavigationProperty Name="TrangThaiHoaDon" Relationship="Self.FK_HoaDon_TrangThaiHoaDon" FromRole="HoaDon" ToRole="TrangThaiHoaDon" />
-          <NavigationProperty Name="SanPhams" Relationship="Self.ChiTietHoaDon" FromRole="HoaDon" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="LoaiSanPham">
           <Key>
@@ -693,10 +669,11 @@
           <Property Name="SoSeri" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="IDCoSo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="IDTrangThai" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IDHoaDon" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="CoSo" Relationship="Self.FK_SanPham_CoSo" FromRole="SanPham" ToRole="CoSo" />
+          <NavigationProperty Name="HoaDon" Relationship="Self.FK__SanPham__IDHoaDo__6E01572D" FromRole="SanPham" ToRole="HoaDon" />
           <NavigationProperty Name="LoaiSanPham" Relationship="Self.FK_SanPham_LoaiSanPham" FromRole="SanPham" ToRole="LoaiSanPham" />
           <NavigationProperty Name="TrangThaiSP" Relationship="Self.FK_SanPham_TrangThaiSP" FromRole="SanPham" ToRole="TrangThaiSP" />
-          <NavigationProperty Name="HoaDons" Relationship="Self.ChiTietHoaDon" FromRole="SanPham" ToRole="HoaDon" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -844,6 +821,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__SanPham__IDHoaDo__6E01572D">
+          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="0..1" />
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HoaDon">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SanPham">
+              <PropertyRef Name="IDHoaDon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_HoaDon_NguoiDung">
           <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
           <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
@@ -940,10 +929,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="ChiTietHoaDon">
-          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
-          <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="DBContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BinhLuanSps" EntityType="Self.BinhLuanSp" />
           <EntitySet Name="CauHinhSPs" EntityType="Self.CauHinhSP" />
@@ -1002,6 +987,10 @@
             <End Role="DonViGiaoHang" EntitySet="DonViGiaoHangs" />
             <End Role="NguoiGiaoHang" EntitySet="NguoiGiaoHangs" />
           </AssociationSet>
+          <AssociationSet Name="FK__SanPham__IDHoaDo__6E01572D" Association="Self.FK__SanPham__IDHoaDo__6E01572D">
+            <End Role="HoaDon" EntitySet="HoaDons" />
+            <End Role="SanPham" EntitySet="SanPhams" />
+          </AssociationSet>
           <AssociationSet Name="FK_HoaDon_NguoiDung" Association="Self.FK_HoaDon_NguoiDung">
             <End Role="NguoiDung" EntitySet="NguoiDungs" />
             <End Role="HoaDon" EntitySet="HoaDons" />
@@ -1034,19 +1023,15 @@
             <End Role="TrangThaiSP" EntitySet="TrangThaiSPs" />
             <End Role="SanPham" EntitySet="SanPhams" />
           </AssociationSet>
-          <AssociationSet Name="ChiTietHoaDon" Association="Self.ChiTietHoaDon">
-            <End Role="HoaDon" EntitySet="HoaDons" />
-            <End Role="SanPham" EntitySet="SanPhams" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBContext">
+        <EntityContainerMapping StorageEntityContainer="BanMayTinhModelStoreContainer" CdmEntityContainer="DBContext">
           <EntitySetMapping Name="BinhLuanSps">
-            <EntityTypeMapping TypeName="DBModel.BinhLuanSp">
+            <EntityTypeMapping TypeName="BanMayTinhModel.BinhLuanSp">
               <MappingFragment StoreEntitySet="BinhLuanSp">
                 <ScalarProperty Name="IDNguoiDung" ColumnName="IDNguoiDung" />
                 <ScalarProperty Name="IDLoaiSanPham" ColumnName="IDLoaiSanPham" />
@@ -1055,7 +1040,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CauHinhSPs">
-            <EntityTypeMapping TypeName="DBModel.CauHinhSP">
+            <EntityTypeMapping TypeName="BanMayTinhModel.CauHinhSP">
               <MappingFragment StoreEntitySet="CauHinhSP">
                 <ScalarProperty Name="IDLoaiSP" ColumnName="IDLoaiSP" />
                 <ScalarProperty Name="TenThuocTinh" ColumnName="TenThuocTinh" />
@@ -1064,7 +1049,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CoSoes">
-            <EntityTypeMapping TypeName="DBModel.CoSo">
+            <EntityTypeMapping TypeName="BanMayTinhModel.CoSo">
               <MappingFragment StoreEntitySet="CoSo">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1076,7 +1061,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DanhGiaSps">
-            <EntityTypeMapping TypeName="DBModel.DanhGiaSp">
+            <EntityTypeMapping TypeName="BanMayTinhModel.DanhGiaSp">
               <MappingFragment StoreEntitySet="DanhGiaSp">
                 <ScalarProperty Name="IDNguoiDung" ColumnName="IDNguoiDung" />
                 <ScalarProperty Name="IDLoaiSanPham" ColumnName="IDLoaiSanPham" />
@@ -1085,7 +1070,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DanhMucSPs">
-            <EntityTypeMapping TypeName="DBModel.DanhMucSP">
+            <EntityTypeMapping TypeName="BanMayTinhModel.DanhMucSP">
               <MappingFragment StoreEntitySet="DanhMucSP">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1093,7 +1078,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DonViGiaoHangs">
-            <EntityTypeMapping TypeName="DBModel.DonViGiaoHang">
+            <EntityTypeMapping TypeName="BanMayTinhModel.DonViGiaoHang">
               <MappingFragment StoreEntitySet="DonViGiaoHang">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1104,7 +1089,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HoaDons">
-            <EntityTypeMapping TypeName="DBModel.HoaDon">
+            <EntityTypeMapping TypeName="BanMayTinhModel.HoaDon">
               <MappingFragment StoreEntitySet="HoaDon">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDNguoiDung" ColumnName="IDNguoiDung" />
@@ -1117,7 +1102,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LoaiSanPhams">
-            <EntityTypeMapping TypeName="DBModel.LoaiSanPham">
+            <EntityTypeMapping TypeName="BanMayTinhModel.LoaiSanPham">
               <MappingFragment StoreEntitySet="LoaiSanPham">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1131,7 +1116,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NguoiDungs">
-            <EntityTypeMapping TypeName="DBModel.NguoiDung">
+            <EntityTypeMapping TypeName="BanMayTinhModel.NguoiDung">
               <MappingFragment StoreEntitySet="NguoiDung">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1146,7 +1131,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NguoiGiaoHangs">
-            <EntityTypeMapping TypeName="DBModel.NguoiGiaoHang">
+            <EntityTypeMapping TypeName="BanMayTinhModel.NguoiGiaoHang">
               <MappingFragment StoreEntitySet="NguoiGiaoHang">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
@@ -1156,7 +1141,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhaCungCaps">
-            <EntityTypeMapping TypeName="DBModel.NhaCungCap">
+            <EntityTypeMapping TypeName="BanMayTinhModel.NhaCungCap">
               <MappingFragment StoreEntitySet="NhaCungCap">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1167,7 +1152,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanViens">
-            <EntityTypeMapping TypeName="DBModel.NhanVien">
+            <EntityTypeMapping TypeName="BanMayTinhModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1179,7 +1164,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhomNguoiDungs">
-            <EntityTypeMapping TypeName="DBModel.NhomNguoiDung">
+            <EntityTypeMapping TypeName="BanMayTinhModel.NhomNguoiDung">
               <MappingFragment StoreEntitySet="NhomNguoiDung">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1187,18 +1172,19 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SanPhams">
-            <EntityTypeMapping TypeName="DBModel.SanPham">
+            <EntityTypeMapping TypeName="BanMayTinhModel.SanPham">
               <MappingFragment StoreEntitySet="SanPham">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDLoaiSanPham" ColumnName="IDLoaiSanPham" />
                 <ScalarProperty Name="SoSeri" ColumnName="SoSeri" />
                 <ScalarProperty Name="IDCoSo" ColumnName="IDCoSo" />
                 <ScalarProperty Name="IDTrangThai" ColumnName="IDTrangThai" />
+                <ScalarProperty Name="IDHoaDon" ColumnName="IDHoaDon" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DBModel.sysdiagram">
+            <EntityTypeMapping TypeName="BanMayTinhModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -1209,7 +1195,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TrangThaiHoaDons">
-            <EntityTypeMapping TypeName="DBModel.TrangThaiHoaDon">
+            <EntityTypeMapping TypeName="BanMayTinhModel.TrangThaiHoaDon">
               <MappingFragment StoreEntitySet="TrangThaiHoaDon">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1217,21 +1203,13 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TrangThaiSPs">
-            <EntityTypeMapping TypeName="DBModel.TrangThaiSP">
+            <EntityTypeMapping TypeName="BanMayTinhModel.TrangThaiSP">
               <MappingFragment StoreEntitySet="TrangThaiSP">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TenTT" ColumnName="TenTT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="ChiTietHoaDon" TypeName="DBModel.ChiTietHoaDon" StoreEntitySet="ChiTietHoaDon">
-            <EndProperty Name="HoaDon">
-              <ScalarProperty Name="ID" ColumnName="IDHoaDon" />
-            </EndProperty>
-            <EndProperty Name="SanPham">
-              <ScalarProperty Name="ID" ColumnName="IDSanPham" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

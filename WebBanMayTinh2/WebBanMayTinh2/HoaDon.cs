@@ -29,11 +29,11 @@ namespace WebBanMayTinh
         public Nullable<System.DateTime> NgayXuatHD { get; set; }
     
         public virtual CoSo CoSo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SanPham> SanPhams { get; set; }
         public virtual NguoiDung NguoiDung { get; set; }
         public virtual NguoiGiaoHang NguoiGiaoHang { get; set; }
         public virtual NhanVien NhanVien { get; set; }
         public virtual TrangThaiHoaDon TrangThaiHoaDon { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SanPham> SanPhams { get; set; }
     }
 }
